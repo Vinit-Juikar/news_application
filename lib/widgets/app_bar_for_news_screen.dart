@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class AppBarForHomeScreen extends StatelessWidget {
   const AppBarForHomeScreen({super.key});
@@ -9,7 +7,7 @@ class AppBarForHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Row(
-        children: [
+        children: const [
           Icon(Icons.circle)
         ],
       ),
