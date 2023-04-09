@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 Future<List<String>> getNewsApiImages() async {
   const apiKey = "fe428972014842deb21bdf7860fdeaeb";
   const urlForLatestNewsImages =
-      "https://newsapi.org/v2/top-headlines?category=technology&apiKey=fe428972014842deb21bdf7860fdeaeb";
+      "https://newsapi.org/v2/everything?q=apple&from=2023-04-08&to=2023-04-08&sortBy=popularity&apiKey=fe428972014842deb21bdf7860fdeaeb";
 
   final response = await http.get(Uri.parse(urlForLatestNewsImages));
   if (response.statusCode == 200) {
@@ -37,3 +37,5 @@ List<String> _generateRandomImageUrls() {
     "https://picsum.photos/id/241/200/300",
   ];
 }
+
+
