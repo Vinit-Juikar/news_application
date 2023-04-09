@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_application/api/latest_news_carousel_images.dart';
 import 'package:news_application/home_screen/search_section.dart';
+import 'package:news_application/pages/profile_page.dart';
 import 'package:news_application/widgets/business_news.dart';
 import 'package:news_application/widgets/local_news.dart';
 import 'package:news_application/widgets/top_news.dart';
@@ -15,11 +16,12 @@ class NewsHomeScreen extends StatefulWidget {
   State<NewsHomeScreen> createState() => _NewsHomeScreenState();
 }
 
-class _NewsHomeScreenState extends State<NewsHomeScreen> with SingleTickerProviderStateMixin {
+class _NewsHomeScreenState extends State<NewsHomeScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
   bool _isSearching = false;
-    @override
+  @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
@@ -127,15 +129,24 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> with SingleTickerProvid
       elevation: 0,
       title: Row(
         children: [
-          const Icon(
-            Icons.circle,
-            size: 40,
+          GestureDetector(
+            // onTap: () {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (BuildContext context) => ProfileScreen(),
+            //     ),
+            //   );
+            // },
+            child: const Icon(
+              Icons.person,
+              size: 40,
+            ),
           ),
           const Spacer(),
           Text(
             "News Bridge",
-            style:
-                GoogleFonts.lato(textStyle: const TextStyle(fontSize: 20)),
+            style: GoogleFonts.lato(textStyle: const TextStyle(fontSize: 20)),
           ),
           const Spacer(),
           AnimatedBuilder(
@@ -159,7 +170,7 @@ class _NewsHomeScreenState extends State<NewsHomeScreen> with SingleTickerProvid
                         _animationController.forward();
                         Navigator.of(context)
                             .push(MaterialPageRoute(builder: (context) {
-                          return  const SearchSection();
+                          return const SearchSection();
                         })).then((value) {
                           setState(() {
                             _isSearching = false;

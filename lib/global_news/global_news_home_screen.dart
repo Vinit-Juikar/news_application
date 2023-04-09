@@ -27,7 +27,7 @@ class _GlobalNewsHomeScreenState extends State<GlobalNewsHomeScreen>
       physics: const AlwaysScrollableScrollPhysics(),
       child: TabBar(
         controller: _tabController,
-        indicatorColor: Colors.black,
+        indicatorColor: Colors.white,
         indicatorSize: TabBarIndicatorSize.tab,
         indicatorWeight: 4.0,
         isScrollable: true,

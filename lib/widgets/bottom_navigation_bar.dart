@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_application/global_news/global_news_home_screen.dart';
-import 'package:news_application/personalized_screen/filter_screen.dart';
-import 'package:news_application/saved_section/saved_home_screen.dart';
+import 'package:news_application/pages/profile_page.dart';
+
 
 import '../home_screen/main_news_homescreen.dart';
 
@@ -18,9 +18,8 @@ class _BottomNavigationBarForHomeScreenState
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     const NewsHomeScreen(),
-    const FilterScreen(),
     const GlobalNewsHomeScreen(),
-    const SavedHomeScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -42,19 +41,15 @@ class _BottomNavigationBarForHomeScreenState
             backgroundColor: Colors.white,
           ),
           // Add your other bottom navigation items here
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.white),
-            label: 'Personalized',
-            backgroundColor: Colors.white,
-          ),
+         
           BottomNavigationBarItem(
             icon: Icon(Icons.public, color: Colors.white),
             label: 'Global',
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark, color: Colors.white),
-            label: 'Saved',
+            icon: Icon(Icons.person, color: Colors.white),
+            label: 'Profile',
             backgroundColor: Colors.white,
           ),
         ],

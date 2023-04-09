@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 Future<List<Map<String, String>>> getTopNews() async {
   const urlForBuisnessNews =
-      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=85940a4d7b23488ba7ecd9e9e7c6533e";
+"https://newsapi.org/v2/everything?q=tesla&from=2023-03-09&sortBy=publishedAt&apiKey=fe428972014842deb21bdf7860fdeaeb";
   final response = await http.get(Uri.parse(urlForBuisnessNews));
   if (response.statusCode == 200) {
     final jsonDataForBusinessNews = jsonDecode(response.body);
